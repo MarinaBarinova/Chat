@@ -6,6 +6,7 @@ class Chat {
     }
     render (){
         this.el.innerHTML=`
+        <header class="chat__header"><span class="chat__title">Chat<span></header>
         <div class = "chat">
             ${this._getMessagesHtml()}
         </div>

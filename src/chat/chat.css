@@ -1,6 +1,47 @@
-.chat{
-    background: coral;
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
+@import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+body{
+    font-family: 'Gamja Flower', cursive;
+    font-family: 'Gamja Flower', cursive;
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Lobster', cursive;
 }
-.chat__messages{
+
+.chat{
+    max-width: 1200px;
+    margin:auto;
+    font-family: 'Lobster', cursive;
+
+background: rgba(255,255,255,1);
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 71%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(71%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 71%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 71%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 71%, rgba(237,237,237,1) 100%);
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 71%, rgba(237,237,237,1) 100%);
+    
+}
+.chat__header{
+   max-width: 1200px;
+   padding: 10px;
+   box-sizing: border-box;
+   margin:auto;
+   height: 120px;
+   background: rgba(208,236,217,1);
+   background: -moz-linear-gradient(left, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
+   background: -webkit-gradient(left top, right top, color-stop(0%, rgba(208,236,217,1)), color-stop(100%, rgba(118,178,137,1)));
+   background: -webkit-linear-gradient(left, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
+   background: -o-linear-gradient(left, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
+   background: -ms-linear-gradient(left, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
+   background: linear-gradient(to right, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
+
+}
+.chat__title{
+    font-size: 100px;
+    font-family: 'Great Vibes', cursive;
+    color:darkgrey;
+}
+.chat__message{
     background: cyan;
 }

@@ -1,2 +1,6 @@
-# superchat
-Учебный проект 'Чат' ,май 2018
+# superchat #
+# Учебный проект 'Чат' ,май 2018#
+...
+$ npm install 
+$ npm run start:server
+...

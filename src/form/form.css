@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Rubik');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Rubik');
 .form{
 margin: auto;
 max-width: 1200px;
@@ -26,4 +28,8 @@ input{
 }
 input:hover{
      background-color:#008080;
+}
+textarea{
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
 }

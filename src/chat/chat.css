@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Gamja+Flower');
 @import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Rubik');
+
 body{
     font-family: 'Gamja Flower', cursive;
     font-family: 'Gamja Flower', cursive;
     font-family: 'Great Vibes', cursive;
     font-family: 'Lobster', cursive;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'EB Garamond', serif;
 }
 
 .chat{
@@ -37,11 +42,32 @@ background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,
    background: linear-gradient(to right, rgba(208,236,217,1) 0%, rgba(118,178,137,1) 100%);
 
 }
-.chat__title{
+.chat_title{
     font-size: 100px;
     font-family: 'Great Vibes', cursive;
     color:darkgrey;
 }
-.chat__message{
-    background: cyan;
+.chat_messages{
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+.chat_messages-flex{
+    display: flex;
+    justify-content: space-between;
+}
+.chat_messages-author{
+    color: rebeccapurple;
+}
+.chat_messages-data{
+    color:#5f9ea0;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+    font-style: italic;
+}
+.chat_messages-text{
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
 }

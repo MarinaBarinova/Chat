@@ -20,12 +20,9 @@ class Form {
         this.el.addEventListener('submit',this._onSubmit.bind(this));
     }
     _onSubmit(event){
-        
         event.preventDefault();
         const el=event.target;
-
         const message = el.querySelector('[name ="message"]').value;
-
         this.callback(message);
         el.reset();
     }

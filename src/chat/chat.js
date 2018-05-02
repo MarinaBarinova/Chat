@@ -6,7 +6,7 @@ class Chat {
     }
     render (){
         this.el.innerHTML=`
-        <header class="chat__header"><span class="chat__title">Chat<span></header>
+        <header class="chat__header"><span class="chat_title">Chat<span></header>
         <div class = "chat">
             ${this._getMessagesHtml()}
         </div>
@@ -18,7 +18,12 @@ class Chat {
     _getMessagesHtml(){
        return this.data.messages.map((messagesData) => {
             return `<div class="chat_messages">
-            ${messagesData.author}:${messagesData.text}:${messagesData.date}
+            <div class = "chat_messages-flex">
+            <div class = "chat_messages-author"> ${messagesData.author}</div>
+            <div class = "chat_messages-data">${messagesData.date}</div>
+            </div>
+           <div class = "chat_messages-text">${messagesData.text}</div>
+          
             </div>`;
         }).join('');
     }

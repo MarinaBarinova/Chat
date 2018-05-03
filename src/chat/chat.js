@@ -6,12 +6,11 @@ class Chat {
     }
     render (){
         this.el.innerHTML=`
-        <header class="chat__header"><span class="chat_title">Chat<span></header>
-        <div class = "chat">
+            <div class = "chat" style="display:block">
             ${this._getMessagesHtml()}
         </div>
           `;     
-    }
+         }
     addMessage(messages){
         this.data.messages =[...this.data.messages,{author:localStorage.getItem("nickname"),text:messages,date:new Date().toLocaleString()}];
     }
@@ -26,6 +25,11 @@ class Chat {
           
             </div>`;
         }).join('');
+    }
+
+    hideChat() {
+        this.el.innerHTML='';
+        this.data.messages=[];
     }
 
 }

@@ -8,8 +8,6 @@ class Login {
 
     render (){
         this.el.innerHTML = `
-        <header class="chat__header"><span class="chat_title">Chat<span></header>
-       
         <form class="logintext">
         <h4>Sign in</h4>
             <input class ="chat_login-nickname" type = "text" placeholder="please,enter your name">
@@ -29,7 +27,7 @@ class Login {
         el.reset();
     }
     hideform(){
-        this.el.style = "display:none"
+        this.el.innerHTML = "";
     }
 
 }

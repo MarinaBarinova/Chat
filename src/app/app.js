@@ -24,24 +24,46 @@ class App {
                     this.login.hideform ();
                     this.render();
                 }
-                this.login.addMessage(nickname);
-                this.login.render();
             }
         });
-        
-        this.el.append(this.chat.el,this.form.el,this.login.el);
+        this.header = document.createElement('header');
+        this.el.append(this.header,this.chat.el,this.form.el,this.login.el);
         this.render();
     }
     render(){
+        
         if (localStorage.getItem("nickname")){
+            //header with exit
+            this.renderHeader(true);
             this.chat.render();
             this.form.render();
         } else {
+            //header wo exit
+            this.renderHeader();
             this.login.render ();
         }
-                
-        
-       
+    }
+
+    renderHeader(user){
+        this.header.innerHTML='';
+        this.header.classList.add('chat__header');
+        let span = document.createElement('span');
+        span.classList.add("chat_title");
+        span.textContent = "Chat";
+        this.header.append(span);
+        if(user){
+            let i = document.createElement("i");
+            i.className="fa fa-3x fa-sign-in";
+            i.setAttribute("aria-hidden","true");
+            i.addEventListener("click",()=>{
+                localStorage.removeItem("nickname");
+                this.chat.hideChat();
+                this.form.hideForm();
+                this.render();
+            });
+            this.header.append(i);
+
+        } 
     }
 
 }

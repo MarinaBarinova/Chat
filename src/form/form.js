@@ -1,8 +1,8 @@
 
 class Form {
     constructor ({el,onSubmit}){
-        this.el=el;
-        this.callback=onSubmit;
+        this.el = el;
+        this.callback = onSubmit;
         this._initEvents();
 
     }
@@ -25,6 +25,10 @@ class Form {
         const message = el.querySelector('[name ="message"]').value;
         this.callback(message);
         el.reset();
+    }
+
+    hideForm() {
+        this.el.innerHTML='';
     }
 
 }

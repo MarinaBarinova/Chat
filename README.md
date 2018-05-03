@@ -1,4 +1,4 @@
-# superchat #
+# chat #
 # Учебный проект 'Чат' ,май 2018#
 ...
 $ npm install 

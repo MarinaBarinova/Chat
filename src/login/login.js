@@ -9,11 +9,12 @@ class Login {
     render (){
         this.el.innerHTML = `
         <header class="chat__header"><span class="chat_title">Chat<span></header>
+       
         <form class="logintext">
-        <div class = "logintext-flex">
+        <h4>Sign in</h4>
             <input class ="chat_login-nickname" type = "text" placeholder="please,enter your name">
             <input class = "chat_login-btn" type = "submit" value = "login">
-         </div>
+         
         </form>
         `;
     }

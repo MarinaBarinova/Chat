@@ -1,19 +1,25 @@
-.loginform{
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+.logintext{
     max-width: 1200px;
     height: 800px;
     margin:auto;
     font-family: 'Lobster', cursive;
+    text-align: center;
 }
 .chat_login-nickname {
-    margin: 120px auto;
+    display: block;
+    margin: 50px auto;
     height: 30px;
-    width: 800px;
+    max-width: 800px;
     padding:0 10px 0 10px;
     color: grey;
     font-size: 20px;
     font-style: italic;
+    box-shadow:0 0 5px rgb(199, 199, 199);
 }
 .chat_login-btn {
+    display: inline-block;
+    text-align: center;
     width: 160px;
     height: 40px;
     border-radius:3px; 
@@ -29,4 +35,10 @@
 .logintext-flex{
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+}
+h4{
+    color: #008080;
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
 }

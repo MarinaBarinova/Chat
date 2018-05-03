@@ -6,8 +6,8 @@ class App {
             el:document.createElement('div'),
             data:{
                 messages:[
-                    {text:'Привет!Как дела?',author:'Mary',date:'2018-04-30 17:00:00 '},
-                    {text:'Привет!Хорошо',author:'Olga',date:'2018-04-30 17:02:00 '},
+                    {text:'Привет!Как дела?',author:'Mary',date:new Date().toLocaleString()},
+                    {text:'Привет!Хорошо',author:'Olga',date:new Date().toLocaleString()},
                 ]
             }
 

@@ -5,10 +5,7 @@ class App {
         this.chat=new Chat({
             el:document.createElement('div'),
             data:{
-                messages:[
-                    {text:'Привет!Как дела?',author:'Mary',date:new Date().toLocaleString()},
-                    {text:'Привет!Хорошо',author:'Olga',date:new Date().toLocaleString()},
-                ]
+                messages:[/*сервер*/]
             }
 
         });
@@ -19,13 +16,32 @@ class App {
                 this.chat.render();
             }
         });
+        this.login = new Login ({
+            el:document.createElement("div"),
+            onSubmit: (nickname) => {
+                if (nickname && nickname.length > 0 ){
+                    localStorage.setItem("nickname",nickname);
+                    this.login.hideform ();
+                    this.render();
+                }
+                this.login.addMessage(nickname);
+                this.login.render();
+            }
+        });
         
-        this.el.append(this.chat.el,this.form.el);
+        this.el.append(this.chat.el,this.form.el,this.login.el);
         this.render();
     }
     render(){
-        this.chat.render();
-        this.form.render();
+        if (localStorage.getItem("nickname")){
+            this.chat.render();
+            this.form.render();
+        } else {
+            this.login.render ();
+        }
+                
+        
+       
     }
 
 }

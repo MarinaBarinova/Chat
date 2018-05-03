@@ -13,7 +13,7 @@ class Chat {
           `;     
     }
     addMessage(messages){
-        this.data.messages =[...this.data.messages,{author:"UNKNOWN",text:messages,date:new Date().toLocaleString()}];
+        this.data.messages =[...this.data.messages,{author:localStorage.getItem("nickname"),text:messages,date:new Date().toLocaleString()}];
     }
     _getMessagesHtml(){
        return this.data.messages.map((messagesData) => {

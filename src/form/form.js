@@ -10,7 +10,7 @@ class Form {
         this.el.innerHTML= `
         <form class="form">
             <textarea name="message"></textarea>
-            <input type="submit" value="Send message">
+            <input class="form_btn" type="submit" value="Send message">
          
         </form>
         `;

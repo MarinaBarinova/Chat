@@ -22,7 +22,6 @@ class Chat {
             <div class = "chat_messages-data">${messagesData.date}</div>
             </div>
            <div class = "chat_messages-text">${messagesData.text}</div>
-          
             </div>`;
         }).join('');
     }

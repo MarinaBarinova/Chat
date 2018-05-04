@@ -33,12 +33,12 @@ class App {
     render(){
         
         if (localStorage.getItem("nickname")){
-            //header with exit
+            
             this.renderHeader(true);
             this.chat.render();
             this.form.render();
         } else {
-            //header wo exit
+            
             this.renderHeader();
             this.login.render ();
         }
@@ -62,7 +62,6 @@ class App {
                 this.render();
             });
             this.header.append(i);
-
         } 
     }
 

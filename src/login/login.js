@@ -17,12 +17,12 @@ class Login {
         `;
     }
     _initEvents(){
-        this.el.addEventListener('submit',this._onSubmit.bind(this));
+        this.el.addEventListener("submit",this._onSubmit.bind(this));
     }
     _onSubmit(event){
         event.preventDefault();
         const el=event.target;
-        const nickname = el.querySelector('.chat_login-nickname').value;
+        const nickname = el.querySelector(".chat_login-nickname").value;
         this.callback(nickname);
         el.reset();
     }

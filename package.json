@@ -1,12 +1,13 @@
 {
-  "name": "superchat",
+  "name": "chat",
   "version": "1.0.0",
-  "description": "Учебный проект 'Чат' ,май 2018",
+  "description": "Учебный проект 'Чат' , 2018",
   "main": "index.js",
   "scripts": {
     "start:server": "./node_modules/.bin/static-server .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint src/**/*.js"
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "build": "cp ./node_modules/font-awesome/css/font-awesome.min.css ./dist/"
   },
   "repository": {
     "type": "git",
@@ -15,9 +16,9 @@
   "author": "Marina Barinova",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MaryBu/superchat/issues"
+    "url": "https://github.com/MaryBu/chat/issues"
   },
-  "homepage": "https://github.com/MaryBu/superchat#readme",
+  "homepage": "https://github.com/MaryBu/chat#readme",
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",

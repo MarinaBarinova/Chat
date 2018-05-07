@@ -1,5 +1,5 @@
 
-class Form {
+export class Form {
     constructor ({el,onSubmit,selector,tmpl}){
         this.el = el;
         this.callback = onSubmit;

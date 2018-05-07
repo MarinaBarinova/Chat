@@ -1,0 +1,8 @@
+.chat(style="display:block")
+    each message in messages
+        .chat_messages
+            .chat_messages-flex
+                .chat_messages-author= message.author
+                .chat_messages-data= message.date
+            .chat_messages-text= message.text
+

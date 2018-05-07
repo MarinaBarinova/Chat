@@ -1,9 +1,8 @@
-class Login {
+export class Login {
     constructor({el,onSubmit}){
         this.el = el;
         this.callback = onSubmit;
         this._initEvents();
-        
     }
 
     render (){
@@ -12,7 +11,6 @@ class Login {
         <h4>Sign in</h4>
             <input class ="chat_login-nickname" type = "text" placeholder="please,enter your name">
             <input class = "chat_login-btn" type = "submit" value = "login">
-         
         </form>
         `;
     }

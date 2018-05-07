@@ -1,20 +1,19 @@
-class LoginView {
-    constructor ({el}){
+import {Form} from "../form/form.js";
+export class LoginView {
+    constructor ({el,pageSubmit}){
         this.el = el;
+        this.pageSubmit = pageSubmit;
         this.form = new Form ({
             el:document.createElement("div"),
             onSubmit: (nickname) => {
                 if (nickname && nickname.length > 0 ){
-                    localStorage.setItem("nickname",nickname);
-                    this.login.hideform ();
-                    this.render();
+                    this.pageSubmit("login",nickname);
                 }
             },
             selector:".chat_login-nickname",
             tmpl:window.loginTmpl
 
         });
-        this.render();
     }
 
     render(){

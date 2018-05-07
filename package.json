@@ -23,5 +23,8 @@
     "eslint-config-google": "^0.9.1",
     "pug-cli": "^1.0.0-alpha6",
     "static-server": "^2.2.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }

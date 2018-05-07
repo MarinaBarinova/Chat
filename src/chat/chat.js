@@ -1,18 +1,15 @@
-class Chat {
+const tmpl = window.chatTmpl;
+export class Chat {
     constructor ({el,data}){
         this.el = el;
         this.data = data || {messages: []};
 
     }
     render (){
-        this.el.innerHTML=`
-            <div class = "chat" style="display:block">
-            ${this._getMessagesHtml()}
-        </div>
-          `;
+        this.el.innerHTML=tmpl(this.data);
     }
-    addMessage(messages){
-        this.data.messages =[...this.data.messages,{author:localStorage.getItem("nickname"),text:messages,date:new Date().toLocaleString()}];
+    addMessage(messages,nickname){
+        this.data.messages =[...this.data.messages,{author:nickname,text:messages,date:new Date().toLocaleString()}];
     }
     _getMessagesHtml(){
         return this.data.messages.map((messagesData) => {
@@ -26,10 +23,8 @@ class Chat {
         }).join("");
     }
 
-    hideChat() {
-        this.el.innerHTML="";
+    clearMessages() {
         this.data.messages=[];
     }
 
 }
-        

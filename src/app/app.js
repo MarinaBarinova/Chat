@@ -1,50 +1,43 @@
-class App {
+import {ChatView} from "../views/chatview.js";
+import {LoginView} from "../views/loginview.js";
+
+export class App {
     constructor(el){
         this.el = el;
-        this.chat = new Chat({
-            el:document.createElement("div"),
-            data:{
-                messages:[/*сервер*/]
-            }
+        this.nickname = localStorage.getItem("nickname");
+        this.viewContainer = document.createElement("div");
+        this.chatView = new ChatView({
+            el:this.viewContainer,
+            nickname: this.nickname,
+            pageSubmit: this.toggleView.bind(this)
         });
-
-        this.header = document.createElement("header");
-        this.el.append(this.header,this.chat.el,this.form.el,this.login.el);
+        this.loginView = new LoginView({
+            el:this.viewContainer,
+            pageSubmit: this.toggleView.bind(this)
+        });
+        this.el.append(this.viewContainer);
         this.render();
     }
     render(){
-
-        if (localStorage.getItem("nickname")){
-
-            this.renderHeader(true);
-            this.chat.render();
-            this.form.render();
+        if (this.nickname){
+            this.chatView.render();
         } else {
-            
-            this.renderHeader();
-            this.login.render ();
+            this.loginView.render();
         }
     }
 
-    renderHeader(user){
-        this.header.innerHTML="";
-        this.header.classList.add("chat__header");
-        let span = document.createElement("span");
-        span.classList.add("chat_title");
-        span.textContent = "Chat";
-        this.header.append(span);
-        if(user){
-            let i = document.createElement("i");
-            i.className = "fa fa-3x fa-sign-in";
-            i.setAttribute("aria-hidden","true");
-            i.addEventListener("click",() => {
-                localStorage.removeItem("nickname");
-                this.chat.hideChat();
-                this.form.hideForm();
-                this.render();
-            });
-            this.header.append(i);
-        } 
+    toggleView(view,nickname) {
+        if(view == "chat") {
+            localStorage.removeItem("nickname");
+            this.chatView.clear();
+            this.loginView.render();
+        } else {
+            localStorage.setItem("nickname",nickname);
+            this.chatView.setNickname(nickname);
+            this.chatView.render();
+        }
     }
+
+
 
 }

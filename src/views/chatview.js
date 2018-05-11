@@ -11,7 +11,7 @@ export class ChatView {
             el:document.createElement("div"),
             onSubmit: (message) => {
                 //add message
-                let messageObj = {author:nickname,text:message,date:new Date().toLocaleString()};
+                let messageObj = {author:this.nickname,text:message,date:new Date().toLocaleString()};
                 this.http.post("/chat.json",messageObj,()=>{
                     this.chat.addMessage(messageObj);
                     this.chat.render();

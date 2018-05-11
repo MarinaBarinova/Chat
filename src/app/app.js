@@ -37,7 +37,4 @@ export class App {
             this.chatView.render();
         }
     }
-
-
-
 }

@@ -11,8 +11,9 @@ export class ChatView {
             el:document.createElement("div"),
             onSubmit: (message) => {
                 //add message
-                this.http.post("/chat.json",message,()=>{
-                    this.chat.addMessage(message,this.nickname);
+                let messageObj = {author:nickname,text:message,date:new Date().toLocaleString()};
+                this.http.post("/chat.json",messageObj,()=>{
+                    this.chat.addMessage(messageObj);
                     this.chat.render();
                 });
             },
@@ -21,16 +22,20 @@ export class ChatView {
 
         });
         this.chat= new Chat( {
-            el:document.createElement("div"),
-            data:{messages: this.http.get("/chat.json")||[]}
+            el:document.createElement("div")
         });
+
     }
 
     render(){
         this.el.innerHTML = window.chatheaderTmpl();
         this.el.append(this.chat.el,this.form.el);
         this.el.querySelector(".fa-sign-in").addEventListener("click",()=>{this.pageSubmit("chat");});
-        this.chat.render();
+        this.http.get("/chat.json", (data) => {
+            data = data || {};
+            this.chat.setMessages(Object.values(data)||[]);
+            this.chat.render();
+        });
         this.form.render();
     }
 

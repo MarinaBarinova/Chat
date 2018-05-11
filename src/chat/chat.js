@@ -8,13 +8,17 @@ export class Chat {
     render (){
         this.el.innerHTML=tmpl(this.data);
     }
-    addMessage(messages,nickname){
-        this.data.messages =[...this.data.messages,{author:nickname,text:messages,date:new Date().toLocaleString()}];
+    addMessage(message){
+        this.data.messages =[...this.data.messages,message];
     }
 
 
     clearMessages() {
         this.data.messages=[];
+    }
+
+    setMessages(messages) {
+        this.data.messages = messages;
     }
 
 }
